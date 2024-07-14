@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/nav";
 
-const inter = Inter({ subsets: ["latin"] });
+const open = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Exclusive-Admin",
@@ -16,9 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={open.className}>
         <main>
-          {children}
+          <Navbar/>
+          <div className="bg-[#f5f5f5] w-full min-h-screen p-10 px-12">
+            {children}
+          </div>
         </main>
       </body>
     </html>
